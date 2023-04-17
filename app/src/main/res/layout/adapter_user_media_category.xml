@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_7sdp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/_70sdp">
+            <RelativeLayout
+                android:id="@+id/rl_click_cate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGreen">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_category"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/account"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.cts.saharaGoSeller.customui.CustomTextView
+            android:id="@+id/tv_media_cate"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textColor="@color/black"
+            android:text="dbdbdbdnnnnnbdbdbdbd"
+            android:textSize="@dimen/_8sdp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/recycler_media_product"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_cus_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:background="@color/whiteCream">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:src="@drawable/back_arrow" />
+
+    <com.cts.saharaGoSeller.customui.CustomTextviewBold
+        android:id="@+id/tv_usertoolbartitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/iv_back"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp" />
+
+    <LinearLayout
+        android:id="@+id/llCountryContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+            android:id="@+id/tv_country_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_open_country"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/flag"
+            android:visibility="visible"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/_1sdp" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/seach"
+            android:visibility="visible"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/_1sdp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

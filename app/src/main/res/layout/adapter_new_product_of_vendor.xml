@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="@dimen/_135sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_160sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:elevation="0dp"
+                    app:cardCornerRadius="@dimen/_5sdp">
+                    <!--  imagefromurl="@{whishList.price}"-->
+                    <ImageView
+                        android:id="@+id/iv_wishlistimage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/loading" />
+                </androidx.cardview.widget.CardView>
+                <!-- android:text="@{mUserSubCategoryListItem.name}"-->
+                 <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9sdp" />
+
+                <com.cts.saharaGoSeller.customui.CustomTextView
+                    android:id="@+id/tv_dis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text=""
+                    android:textSize="@dimen/_8sdp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.cts.saharaGoSeller.customui.CustomTextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.cts.saharaGoSeller.customui.CustomTextView
+                        android:id="@+id/tv_percent_off"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                        <LinearLayout
+                            android:id="@+id/rl_open_addtocart"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/black_background_curved"
+                            android:padding="@dimen/_5sdp">
+                            <ImageView
+                                android:id="@+id/rl_open_addtocart2"
+                                android:layout_width="@dimen/_13sdp"
+                                android:layout_height="@dimen/_13sdp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/bag_white" />
+                            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_9sdp" />
+                        </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:src="@drawable/wishlist"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

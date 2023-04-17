@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="categoryAdapter"
+            type="com.cradle.user.adapters.filter.FilterCategoryAdapter" />
+
+        <variable
+            name="subCategoryAdapter"
+            type="com.cradle.user.adapters.filter.FilterSubCategoryAdapter" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".user.userActivity.CategoryFilterActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="@dimen/_40sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_cus_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp">
+
+                    <ImageView
+                        android:id="@+id/iv_back_trade"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/back_arrow" />
+
+                    <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                        android:id="@+id/tv_usertoolbartitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/iv_back_trade"
+                        android:text="Filter"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/light_grey"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/light_grey"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:background="@color/light_grey2"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adapter="@{categoryAdapter}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSubCatrgory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adapter="@{subCategoryAdapter}"
+
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="@dimen/_40sdp" />
+    </LinearLayout>
+</layout>

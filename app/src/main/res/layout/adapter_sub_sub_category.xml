@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="subSubCategoryAdapter"
+            type="com.cradle.user.adapters.SubSubCategoryAdapter" />
+
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_sub_category"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp">
+            <com.cts.saharaGoSeller.customui.CustomTextView
+                android:id="@+id/tv_sub_category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="fnfnfnffn"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/_10sdp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/down_search_second"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="userAttractionMenuList"
+            type="com.cradle.model.UserWishList" />
+        <variable
+            name="mUserSubCategoryListItem"
+            type="com.cradle.model.UserSubCategoryListItem" />
+    </data>
+    <RelativeLayout
+        android:id="@+id/rl_user_cate"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/_3sdp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_2sdp"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    >
+                    <ImageView
+                        android:layout_margin="@dimen/_10sdp"
+                        android:id="@+id/iv_wishlistimage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/loading"
+                        />
+
+                </androidx.cardview.widget.CardView>
+                <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:text="@{mUserSubCategoryListItem.name}"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

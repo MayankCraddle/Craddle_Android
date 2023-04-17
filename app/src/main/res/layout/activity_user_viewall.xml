@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="onCLickViewAll"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="userViewAllAdapter"
+            type="com.cradle.user.adapters.AdapterUserViewAll" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteCream"
+        android:orientation="vertical">
+        <include layout="@layout/custom_toolbar_user"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_all"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{userViewAllAdapter}" />
+
+    </LinearLayout>
+</layout>

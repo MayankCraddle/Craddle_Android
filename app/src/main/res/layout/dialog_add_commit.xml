@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_commit_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rac_top_corner_rounded">
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:text="@string/type_your_commit"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/rac_rounded">
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_subject"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_toStartOf="@+id/rl_commit_add"
+                    android:background="@null"
+                    android:maxLength="150"
+                    android:hint=""
+                    android:text=""
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+            <com.cts.saharaGoSeller.customui.CustomTextView
+                android:id="@+id/tv_charecter_remaining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/characters_remaining_54_150"/>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_7sdp">
+                <RelativeLayout
+                    android:id="@+id/rl_add_commit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_8sdp"
+                    android:background="@color/colorGreen">
+
+                    <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/submit_comment"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

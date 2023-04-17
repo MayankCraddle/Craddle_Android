@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteCream">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/custom_toolbar_user" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/ivOpenProductDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_product_item"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/loading" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_toRightOf="@+id/iv_product_item"
+                            android:orientation="vertical">
+
+                            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                                android:id="@+id/tv_product_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <com.cts.saharaGoSeller.customui.CustomTextView
+                                android:id="@+id/tv_quantity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textSize="@dimen/_8sdp" />
+
+                            <com.cts.saharaGoSeller.customui.CustomTextView
+                                android:id="@+id/tvSeller"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textSize="@dimen/_8sdp" />
+
+                            <com.cts.saharaGoSeller.customui.CustomTextView
+                                android:id="@+id/tv_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_8sdp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5sdp">
+
+                        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reason for Cancellation"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black" />
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RadioButton
+                                android:id="@+id/radioBtn1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:text="I want to change address for the order" />
+
+                            <RadioButton
+                                android:id="@+id/radioBtn2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="I have purchase the product elsewhere" />
+
+                            <RadioButton
+                                android:id="@+id/radioBtn3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="I have change my mind" />
+
+                            <RadioButton
+                                android:id="@+id/radioBtn4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="I want to change my phone number" />
+
+                            <RadioButton
+                                android:id="@+id/radioBtn5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="Expected delivery time is very long" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/etReason"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/rac_rounded"
+                            android:gravity="top|left"
+                            android:padding="@dimen/_7sdp"
+                            android:scrollbars="vertical"
+                            android:scrollHorizontally="false"
+                            android:text=""
+                            android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <RelativeLayout
+                    android:id="@+id/rlSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/rac_rounded_green">
+
+                    <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/submit_request"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

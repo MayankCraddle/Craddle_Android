@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="reviewAdapter"
+            type="com.cradle.user.adapters.ReviewAdapter" />
+
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/chat_message_send"
+            android:layout_height="match_parent">
+            <include layout="@layout/custom_toolbar_user"/>
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:text=""
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+            </com.cts.saharaGoSeller.customui.CustomTextviewBold>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewRating"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:adapter="@{reviewAdapter}"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llNoDataFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:src="@drawable/no_data_found_new" />
+
+                <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/no_data_found"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+
+        <include
+            android:visibility="gone"
+            android:id="@+id/chat_message_send"
+            layout="@layout/chat_box_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.cradle.viewmodel.MainViewModel" />
+        <variable
+            name="categoryAdapter"
+            type="com.cradle.user.adapters.CategoryAdapter" />
+
+        <variable
+            name="onUserCategoryClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/rl_cus_toolbar"
+            android:background="@color/whiteCream"
+            android:layout_height="@dimen/_50sdp">
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:id="@+id/tv_usertoolbartitle"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:text=""/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                >
+                <com.cts.saharaGoSeller.customui.CustomTextView
+                    android:id="@+id/tvCountryName"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:textColor="@color/white"
+                    android:text=""/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_open_country"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:civ_border_color="@color/white"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/flag"/>
+                <ImageView
+                    android:id="@+id/ivWishList"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/wishlist" />
+
+                <RelativeLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp">
+
+                    <ImageView
+                        android:id="@+id/iv_cart_screen"
+                        android:layout_width="@dimen/_23sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="@dimen/_23sdp"
+                        android:src="@drawable/cart_new_twox"
+                        />
+                    <RelativeLayout
+                        android:visibility="visible"
+                        android:id="@+id/rl_cart_count"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/notify_item">
+                        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                            android:id="@+id/tv_cart_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8sdp"
+                            android:text="0"
+                            />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            app:cardCornerRadius="@dimen/_7ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteCream"
+
+                >
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/country_search"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@null"
+                    />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/re_user_cate_list"
+                android:adapter="@{categoryAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llOpenProductDetail"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:background="@drawable/sale_img_bg_two">
+
+            <ImageView
+                android:id="@+id/img_product_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/loading"
+                android:layout_margin="@dimen/_4sdp"
+                />
+        </RelativeLayout>
+
+        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+            android:id="@+id/tv_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:text=""
+            android:textSize="@dimen/_11sdp" />
+
+        <com.cts.saharaGoSeller.customui.CustomTextView
+            android:id="@+id/tv_product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="bfffbb"
+            android:textSize="@dimen/_10sdp" />
+    </LinearLayout>
+</layout>

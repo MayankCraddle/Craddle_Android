@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="adapterUserLocalProduct"
+            type="com.cradle.user.adapters.AdapterUserLocalProduct" />
+        <variable
+            name="productByCategoryAdapter"
+            type="com.cradle.user.adapters.ProductByCategoryAdapter" />
+
+        <variable
+            name="adapterUserMajorExpoSeg"
+            type="com.cradle.user.adapters.AdapterUserMajorExpoSeg" />
+
+        <variable
+            name="adapterUserAttractionManu"
+            type="com.cradle.user.adapters.AdapterUserAttractionManu" />
+
+        <variable
+            name="userAgricultralMenuAdapter"
+            type="com.cradle.user.adapters.UserAgricultralMenuAdapter" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_7sdp"
+                android:id="@+id/recycler_productby_category"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:adapter="@{productByCategoryAdapter}"
+                android:layout_height="wrap_content"/>
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="@string/local_products_manufacturing_in_country"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_7sdp"
+                android:id="@+id/recycler_local_product"
+                app:spanCount="2"
+                android:adapter="@{adapterUserLocalProduct}"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="@string/major_export_market_segment"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_7sdp"
+                android:id="@+id/recycler_major_export_segment_market"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:adapter="@{adapterUserMajorExpoSeg}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="@string/prodcut_of_all_attraction_manufactured_in_country"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_7sdp"
+                android:id="@+id/recycler_attrac_manu"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:adapter="@{adapterUserAttractionManu}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:text="@string/agricultural_products_exported_from_country"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_7sdp"
+                android:id="@+id/recycler_agricultural"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:adapter="@{userAgricultralMenuAdapter}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

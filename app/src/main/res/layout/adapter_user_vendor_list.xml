@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="localProductList"
+            type="com.cradle.model.UserWishList" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/shap_rounded_grey"
+            >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_margin="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    >
+                    <!--  imagefromurl="@{whishList.price}"-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/iv_wishlistimage"
+                            android:layout_gravity="center"
+                            android:src="@drawable/loading"
+                            android:layout_centerInParent="true"
+                            android:layout_width="match_parent"
+                            android:adjustViewBounds="true"
+                            android:layout_height="match_parent"
+                            />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                    <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                        android:id="@+id/tv_wishList_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_11sdp"
+                        android:ellipsize="end"
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:text="xyz"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        />
+
+                    <!--   android:text="@{whishList.price}"-->
+                    <com.cts.saharaGoSeller.customui.CustomTextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/_9sdp"
+                        android:textAlignment="center"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="xxxxx"/>
+                <RatingBar
+                    android:id="@+id/rBar_product_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:stepSize="0.5"
+                    android:layout_gravity="center"
+                    style="@android:style/Widget.Material.RatingBar.Small"
+                    android:numStars="5"
+                    />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

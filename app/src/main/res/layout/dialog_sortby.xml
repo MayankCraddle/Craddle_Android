@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/full_transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rac_rounded"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_by"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+
+
+        <LinearLayout
+            android:id="@+id/llHightToLow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_7sdp">
+
+            <ImageView
+                android:id="@+id/ivHightToLow"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_unchecked_checkbox"
+                app:tint="@color/black" />
+
+            <com.cts.saharaGoSeller.customui.CustomTextView
+                android:id="@+id/tvHightToLow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="High to Low"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llLowtoHigh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_7sdp">
+
+            <ImageView
+                android:id="@+id/ivLowtoHigh"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_unchecked_checkbox"
+                app:tint="@color/black" />
+
+            <com.cts.saharaGoSeller.customui.CustomTextView
+                android:id="@+id/tvLowToHigh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Low to High"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_7sdp">
+
+            <ImageView
+                android:id="@+id/ivRating"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_unchecked_checkbox"
+                app:tint="@color/black" />
+
+            <com.cts.saharaGoSeller.customui.CustomTextView
+                android:id="@+id/tvRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Customer Rating"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_11sdp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.cradle.viewmodel.MainViewModel" />
+        <variable
+            name="handler"
+            type="com.cradle.intarfaces.LogInHandler" />
+        <variable
+            name="adapterCountryList"
+            type="com.cradle.user.adapters.AdapterCountryList" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/whiteCream"
+        android:layout_height="match_parent">
+        <include layout="@layout/custom_toolbar_user"
+            android:visibility="gone"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                >
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/country_search"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="@string/country"
+                    app:queryBackground="@null"
+                    />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:adapter="@{adapterCountryList}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+    </LinearLayout>
+</layout>

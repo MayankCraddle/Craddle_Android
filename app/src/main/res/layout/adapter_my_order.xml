@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_open_history"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="@dimen/_5sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_commit"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:src="@drawable/avatar"
+                        android:layout_centerVertical="true"/>
+                    <LinearLayout
+                        android:layout_toStartOf="@+id/ivArrow"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/iv_commit"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                            android:id="@+id/tv_order_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_9sdp" />
+                        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                            android:id="@+id/tv_order_on_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="@dimen/_8sdp" />
+                        <com.cts.saharaGoSeller.customui.CustomTextView
+                            android:id="@+id/tvCreateOn"
+                            android:layout_width="match_parent"
+                            android:text=""
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_8sdp" />
+                        <RatingBar
+                            android:id="@+id/rBar_product_details"
+                            style="@android:style/Widget.Material.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:numStars="5"
+                            android:stepSize="0.5"
+                            android:theme="@style/RatingBar" />
+                    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/ivArrow"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/arrow_right_new"/>
+                </RelativeLayout>
+            </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1ssp"
+            android:background="@color/light_grey"/>
+    </LinearLayout>
+
+</layout>

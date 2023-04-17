@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mNotificationListAdapter"
+            type="com.cradle.user.adapters.NotificationListAdapter" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteCream"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/rlToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_27sdp"
+                android:visibility="visible"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_arrow"/>
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:layout_toRightOf="@+id/ivBack"
+                android:id="@+id/tv_usertoolbartitle"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:text="@string/notification"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content">
+                <com.cts.saharaGoSeller.customui.CustomTextView
+                    android:id="@+id/tvCountryName"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:textColor="@color/white"
+                    android:text=""/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_open_country"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:civ_border_color="@color/white"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/flag"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerNotificationList"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                android:adapter="@{mNotificationListAdapter}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:visibility="gone"
+                android:id="@+id/llNoDataFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:src="@drawable/no_notification" />
+
+                <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/no_data_found"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llOpenProductDetail"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/img_product_image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/loading"/>
+        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+            android:id="@+id/tv_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="fbfbfbffb" />
+
+        <com.cts.saharaGoSeller.customui.CustomTextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10sdp"
+            android:text="fbfbfbffb" />
+    </LinearLayout>
+</layout>

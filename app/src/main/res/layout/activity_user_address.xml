@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="onCLickViewAll"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="mUserAddressListAdapter"
+            type="com.cradle.user.adapters.UserAddressListAdapter" />
+        <variable
+            name="mUserAddressListLocalAdapter"
+            type="com.cradle.user.adapters.UserAddressListAdapter" />
+        <variable
+            name="mUserAddressListHomeAdapter"
+            type="com.cradle.user.adapters.UserAddressListAdapter" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteCream">
+        <include layout="@layout/custom_toolbar_user"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:textSize="@dimen/_9ssp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_homelist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:adapter="@{mUserAddressListHomeAdapter}"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
+
+                  <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/otherdataList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                      android:visibility="gone"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:adapter="@{mUserAddressListLocalAdapter}"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
+                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/re_address_list"
+                    android:orientation="vertical"
+                     android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:adapter="@{mUserAddressListAdapter}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_height="wrap_content"/>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/iv_no_data_found"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:visibility="visible"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/no_data_found_new"/>
+                    <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="@string/no_data_found"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+                <androidx.cardview.widget.CardView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_7sdp">
+                    <RelativeLayout
+                        android:id="@+id/btn_AddNewAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp"
+                        android:background="@color/colorGreen">
+
+                        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/add_new_address"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11sdp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

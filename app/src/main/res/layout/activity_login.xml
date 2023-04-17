@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.cradle.viewmodel.MainViewModel" />
+        <variable
+            name="handler"
+            type="com.cradle.intarfaces.LogInHandler" />
+
+        <variable
+            name="onLogInClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/vendor_logo_bg">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:src="@drawable/logo"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/logo_shape"/>
+        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textAlignment="center"
+            android:text="@string/fill_the_below_information_to_login_in"
+            android:textColor="@color/white"/>
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_290sdp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                >
+                <ImageView
+                    android:id="@+id/submit_button"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:onClick="@{()->handler.onLogInClicked()}"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_190sdp"
+                    android:elevation="@dimen/_10sdp"
+                    android:src="@drawable/next_vendor_new" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_215sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_27sdp"
+                    android:layout_marginEnd="@dimen/_27sdp"
+                    android:elevation="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/login"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15sdp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:hint="@string/email"
+                            android:theme="@style/EditTextThemeOverlay">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/name_edit_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:paddingStart="-1dp"
+                                android:singleLine="true"
+                                android:text="@={viewModel.username}"
+                                android:textSize="@dimen/_11sdp"
+                                tools:ignore="RtlSymmetry" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:hint="@string/password"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/colorGreen">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/name_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:inputType="textPassword"
+                                android:paddingStart="-1dp"
+                                android:text="@={viewModel.password}"
+                                android:textSize="@dimen/_11sdp"
+                                tools:ignore="RtlSymmetry" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:text="@string/remember_me"
+                                android:textSize="@dimen/_9sdp"
+                                android:visibility="invisible" />
+
+                            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                                android:id="@+id/tv_forgot_pass"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:onClick="@{(v)->onLogInClick.onClick(v)}"
+                                android:text="@string/forgot_password"
+                                android:textSize="@dimen/_9sdp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+            android:id="@+id/tv_signUpOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_65sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:onClick="@{(v)->onLogInClick.onClick(v)}"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/don_t_have_an_account_sign_up"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+
+    </LinearLayout>
+</layout>

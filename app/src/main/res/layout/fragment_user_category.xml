@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.cradle.viewmodel.MainViewModel" />
+        <variable
+            name="userCateAdapter"
+            type="com.cradle.user.adapters.AdapterUserCate" />
+
+        <variable
+            name="onUserCategoryClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/rl_cus_toolbar"
+            android:background="@color/whiteCream"
+            android:layout_height="@dimen/_50sdp">
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:id="@+id/tv_usertoolbartitle"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black"
+                android:text=""/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                >
+                <RelativeLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp">
+
+                    <ImageView
+                        android:id="@+id/iv_cart_screen"
+                        android:layout_width="@dimen/_23sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="@dimen/_23sdp"
+                        android:src="@drawable/cart_new_twox"
+                        />
+                    <RelativeLayout
+                        android:visibility="visible"
+                        android:id="@+id/rl_cart_count"
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/notify_item">
+                        <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                            android:id="@+id/tvCartCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_8sdp"
+                            android:text="0"
+                            />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_open_country"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:civ_border_color="@color/white"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/flag"/>
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            app:cardCornerRadius="@dimen/_7ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteCream"
+
+                >
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/country_search"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@null"
+                    />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:id="@+id/re_user_cate_list"
+            android:layout_marginStart="@dimen/_7ssp"
+            android:layout_marginEnd="@dimen/_7ssp"
+            app:spanCount="3"
+            android:adapter="@{userCateAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</layout>

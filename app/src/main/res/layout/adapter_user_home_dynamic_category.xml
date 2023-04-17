@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="adapterCountryColorCodeListItem"
+            type="com.cradle.model.CountryColorCodeListItem" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_view_all"
+            android:layout_width="match_parent"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_height="wrap_content">
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:id="@+id/tv_home_cate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9sdp" />
+
+            <com.cts.saharaGoSeller.customui.CustomTextviewBold
+                android:id="@+id/tv_view_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorGreen"
+                android:text="@string/view_all"
+                android:textSize="@dimen/_9sdp" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_cate"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:visibility="gone"
+            android:id="@+id/iv_no_data_found"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/no_data_found_new"/>
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
